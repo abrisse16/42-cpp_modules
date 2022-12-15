@@ -5,7 +5,7 @@ _GREEN		=	$'\033[1;32m
 _NO_COLOR	=	$'\033[m
 
 # VARIABLE
-NAME	= phonebook
+NAME	= bank
 
 CC		= g++
 
@@ -20,9 +20,8 @@ IFLAGS	= -I.
 OBJS_PATH	= objs/
 DEP_PATH	= deps/
 
-SRCS		= PhoneBook.cpp	\
-			  Contact.cpp	\
-			  main.cpp
+SRCS		= Account.cpp	\
+			  tests.cpp
 OBJS		= $(addprefix $(OBJS_PATH), $(SRCS:.cpp=.o))
 DEP			= $(addprefix $(DEP_PATH), $(SRCS:.cpp=.d))
 

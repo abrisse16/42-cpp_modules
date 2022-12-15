@@ -21,10 +21,10 @@ int	main(void)
 				std::cin >> index;
 				if (!std::cin)
 				{
-//					std::cin.clear();
-//					std::cin.ignore();
+					std::cin.clear();
+					std::cin >> in;
 					std::cout << "No ! Enter a number please" << std::endl;
-					return (0);
+//					return (0);
 				}
 				else if (index > 0 && index <= 8)
 					phoneBook.getContact(index).display();
