@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:34:31 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 23:57:26 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/02/08 00:19:45 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ Cat &	Cat::operator=( Cat const & rhs )
 
 Cat::~Cat( void )
 {
-	std::cout << "Cat Destructor called" << std::endl;
 	delete _brain;
+	std::cout << "Cat Destructor called" << std::endl;
 }
 
 void	Cat::makeSound( void ) const
