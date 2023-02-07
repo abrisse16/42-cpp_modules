@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/27 14:37:11 by abrisse           #+#    #+#              #
-#    Updated: 2023/02/07 23:20:10 by abrisse          ###   ########.fr        #
+#    Updated: 2023/02/08 00:03:15 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS		= Animal.cpp	\
 			  Cat.cpp		\
 			  WrongAnimal.cpp	\
 			  WrongCat.cpp		\
+			  Brain.cpp		\
 			  main.cpp
 OBJS		= $(addprefix $(OBJS_PATH), $(SRCS:.cpp=.o))
 DEP			= $(addprefix $(DEP_PATH), $(SRCS:.cpp=.d))
