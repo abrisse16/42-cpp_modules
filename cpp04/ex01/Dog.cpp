@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:34:31 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 23:57:34 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/02/08 00:19:37 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ Dog &	Dog::operator=( Dog const & rhs )
 
 Dog::~Dog( void )
 {
-	std::cout << "Dog Destructor called" << std::endl;
 	delete _brain;
+	std::cout << "Dog Destructor called" << std::endl;
 }
 
 void	Dog::makeSound( void ) const
