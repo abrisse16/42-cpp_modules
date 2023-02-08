@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/27 14:02:53 by abrisse           #+#    #+#              #
-#    Updated: 2022/12/27 14:02:54 by abrisse          ###   ########.fr        #
+#    Updated: 2023/02/08 15:10:15 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= weapon
 
-CC		= g++
+CC		= c++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\

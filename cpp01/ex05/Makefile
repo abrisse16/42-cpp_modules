@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/27 13:31:11 by abrisse           #+#    #+#              #
-#    Updated: 2022/12/27 13:31:12 by abrisse          ###   ########.fr        #
+#    Updated: 2023/02/08 15:10:31 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= Harl
 
-CC		= g++
+CC		= c++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\

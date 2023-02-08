@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/27 15:01:28 by abrisse           #+#    #+#              #
-#    Updated: 2022/12/27 15:01:29 by abrisse          ###   ########.fr        #
+#    Updated: 2023/02/08 15:10:03 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= horde
 
-CC		= g++
+CC		= c++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\

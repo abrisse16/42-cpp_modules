@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/27 14:37:11 by abrisse           #+#    #+#              #
-#    Updated: 2023/02/07 23:20:10 by abrisse          ###   ########.fr        #
+#    Updated: 2023/02/08 15:11:40 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= Animals
 
-CC		= g++
+CC		= c++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\
