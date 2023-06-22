@@ -7,7 +7,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= megaphone
 
-CC		= g++
+CC		= c++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\
