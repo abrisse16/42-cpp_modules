@@ -7,7 +7,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= phonebook
 
-CC		= c++
+CC		= g++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\

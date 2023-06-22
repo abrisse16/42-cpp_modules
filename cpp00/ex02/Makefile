@@ -7,7 +7,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= bank
 
-CC		= c++
+CC		= g++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\

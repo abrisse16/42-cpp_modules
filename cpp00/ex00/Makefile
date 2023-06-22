@@ -7,7 +7,7 @@ _NO_COLOR	=	$'\033[m
 # VARIABLE
 NAME	= megaphone
 
-CC		= c++
+CC		= g++
 
 CFLAGS	= -Wall		\
 		  -Wextra	\
@@ -26,7 +26,7 @@ DEP			= $(addprefix $(DEP_PATH), $(SRCS:.cpp=.d))
 # COMPILATION
 $(NAME)	: $(OBJS)
 	@$(CC) $(CFLAGS) -o $@ $(OBJS)
-	@echo "$(_GREEN)[$(NAME): Executable created]$(_NO_COLOR)"
+	@echo "$(_GREEN)[philo: Executable created]$(_NO_COLOR)"
 
 $(OBJS_PATH)%.o : %.cpp
 	@mkdir -p $(OBJS_PATH) $(DEP_PATH)
@@ -41,11 +41,11 @@ all		: $(NAME)
 
 clean	:
 	@rm -rf $(OBJS_PATH) $(DEP_PATH)
-	@echo "$(_RED)[$(NAME): All objects removed]$(_NO_COLOR)"
+	@echo "$(_RED)[philo: All objects removed]$(_NO_COLOR)"
 
 fclean	: clean
 	@rm -rf $(NAME)
-	@echo "$(_RED)[$(NAME): Executable removed]$(_NO_COLOR)"
+	@echo "$(_RED)[philo: Executable removed]$(_NO_COLOR)"
 
 re		: fclean all
 
