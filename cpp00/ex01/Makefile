@@ -5,7 +5,7 @@ _GREEN		=	$'\033[1;32m
 _NO_COLOR	=	$'\033[m
 
 # VARIABLE
-NAME	= phonebook
+EXEC	= phonebook
 
 CC		= c++
 
@@ -27,9 +27,9 @@ OBJS		= $(addprefix $(OBJS_PATH), $(SRCS:.cpp=.o))
 DEP			= $(addprefix $(DEP_PATH), $(SRCS:.cpp=.d))
 
 # COMPILATION
-$(NAME)	: $(OBJS)
+$(EXEC)	: $(OBJS)
 	@$(CC) $(CFLAGS) -o $@ $(OBJS)
-	@echo "$(_GREEN)[$(NAME): Executable created]$(_NO_COLOR)"
+	@echo "$(_GREEN)[$(EXEC): Executable created]$(_NO_COLOR)"
 
 $(OBJS_PATH)%.o : %.cpp
 	@mkdir -p $(OBJS_PATH) $(DEP_PATH)
@@ -40,15 +40,15 @@ $(OBJS_PATH)%.o : %.cpp
 -include $(DEP)
 
 # RULES
-all		: $(NAME)
+all		: $(EXEC)
 
 clean	:
 	@rm -rf $(OBJS_PATH) $(DEP_PATH)
-	@echo "$(_RED)[$(NAME): All objects removed]$(_NO_COLOR)"
+	@echo "$(_RED)[$(EXEC): All objects removed]$(_NO_COLOR)"
 
 fclean	: clean
-	@rm -rf $(NAME)
-	@echo "$(_RED)[$(NAME): Executable removed]$(_NO_COLOR)"
+	@rm -rf $(EXEC)
+	@echo "$(_RED)[$(EXEC): Executable removed]$(_NO_COLOR)"
 
 re		: fclean all
 
