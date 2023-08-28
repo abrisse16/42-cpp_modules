@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:37:00 by abrisse           #+#    #+#             */
-/*   Updated: 2022/12/27 14:37:01 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/08/28 10:56:07 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main()
 	Zombie	theodore = Zombie("Theodore");
 	Zombie*	roy = newZombie("Roy");
 
-	randomChump("Collin");
+	randomChump("Michael");
 	
 	theodore.announce();
 	roy->announce();

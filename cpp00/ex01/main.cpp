@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 09:17:43 by abrisse           #+#    #+#             */
+/*   Updated: 2023/08/28 09:17:44 by abrisse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -24,7 +36,6 @@ int	main(void)
 					std::cin.clear();
 					std::cin >> in;
 					std::cout << "No ! Enter a number please" << std::endl;
-//					return (0);
 				}
 				else if (index > 0 && index <= 8)
 					phoneBook.getContact(index).display();

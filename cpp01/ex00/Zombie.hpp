@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:51:38 by abrisse           #+#    #+#             */
-/*   Updated: 2022/12/27 14:53:37 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/08/28 10:51:33 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Zombie
 		void	announce ( void );
 };
 
-Zombie	*newZombie( std::string name );
+Zombie*	newZombie( std::string name );
 
 void	randomChump( std::string name );
 

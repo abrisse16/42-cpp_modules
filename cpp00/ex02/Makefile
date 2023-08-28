@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/08/28 09:30:52 by abrisse           #+#    #+#              #
+#    Updated: 2023/08/28 09:30:53 by abrisse          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # COLORS
 _GREY		=	$'\033[1;30m
 _RED		=	$'\033[1;31m
@@ -5,7 +17,7 @@ _GREEN		=	$'\033[1;32m
 _NO_COLOR	=	$'\033[m
 
 # VARIABLE
-NAME	= bank
+EXEC	= bank
 
 CC		= c++
 
@@ -15,39 +27,38 @@ CFLAGS	= -Wall		\
 		  -MMD		\
 		  -g		\
 		  -std=c++98
-IFLAGS	= -I.
 
-OBJS_PATH	= objs/
+OBJ_PATH	= objs/
 DEP_PATH	= deps/
 
-SRCS		= Account.cpp	\
-			  tests.cpp
-OBJS		= $(addprefix $(OBJS_PATH), $(SRCS:.cpp=.o))
-DEP			= $(addprefix $(DEP_PATH), $(SRCS:.cpp=.d))
+SRC		= Account.cpp	\
+		  tests.cpp
+OBJ		= $(addprefix $(OBJ_PATH), $(SRC:.cpp=.o))
+DEP		= $(addprefix $(DEP_PATH), $(SRC:.cpp=.d))
 
 # COMPILATION
-$(NAME)	: $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $(OBJS)
-	@echo "$(_GREEN)[$(NAME): Executable created]$(_NO_COLOR)"
+$(EXEC)	: $(OBJ)
+	@$(CC) $(CFLAGS) -o $@ $(OBJ)
+	@echo "$(_GREEN)[$(EXEC): Executable created]$(_NO_COLOR)"
 
-$(OBJS_PATH)%.o : %.cpp
-	@mkdir -p $(OBJS_PATH) $(DEP_PATH)
+$(OBJ_PATH)%.o : %.cpp
+	@mkdir -p $(OBJ_PATH) $(DEP_PATH)
 	@echo "$(_GREY)Compiling : $<$(_NO_COLOR)"
-	@$(CC) -o $@ -c $< $(CFLAGS) $(IFLAGS)
+	@$(CC) -o $@ -c $< $(CFLAGS)
 	@mv $(@:.o=.d) $(DEP_PATH)
 
 -include $(DEP)
 
 # RULES
-all		: $(NAME)
+all		: $(EXEC)
 
 clean	:
-	@rm -rf $(OBJS_PATH) $(DEP_PATH)
-	@echo "$(_RED)[$(NAME): All objects removed]$(_NO_COLOR)"
+	@rm -rf $(OBJ_PATH) $(DEP_PATH)
+	@echo "$(_RED)[$(EXEC): All objects removed]$(_NO_COLOR)"
 
 fclean	: clean
-	@rm -rf $(NAME)
-	@echo "$(_RED)[$(NAME): Executable removed]$(_NO_COLOR)"
+	@rm -rf $(EXEC)
+	@echo "$(_RED)[$(EXEC): Executable removed]$(_NO_COLOR)"
 
 re		: fclean all
 

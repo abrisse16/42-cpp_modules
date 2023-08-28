@@ -6,13 +6,13 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:55:30 by abrisse           #+#    #+#             */
-/*   Updated: 2022/12/27 14:55:31 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/08/28 10:51:14 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie( std::string name )
+Zombie*	newZombie( std::string name )
 {
 	return (new Zombie(name));
 }
