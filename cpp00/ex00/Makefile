@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/28 08:47:56 by abrisse           #+#    #+#              #
-#    Updated: 2023/08/28 08:47:57 by abrisse          ###   ########.fr        #
+#    Updated: 2023/08/31 10:41:10 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,22 +28,22 @@ CFLAGS	= -Wall		\
 		  -g		\
 		  -std=c++98
 
-OBJS_PATH	= objs/
+OBJ_PATH	= objs/
 DEP_PATH	= deps/
 
-SRCS		= megaphone.cpp
-OBJS		= $(addprefix $(OBJS_PATH), $(SRCS:.cpp=.o))
-DEP			= $(addprefix $(DEP_PATH), $(SRCS:.cpp=.d))
+SRC		= megaphone.cpp
+OBJ		= $(addprefix $(OBJ_PATH), $(SRC:.cpp=.o))
+DEP		= $(addprefix $(DEP_PATH), $(SRC:.cpp=.d))
 
 # COMPILATION
-$(EXEC)	: $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $(OBJS)
+$(EXEC)	: $(OBJ)
+	@$(CC) $(CFLAGS) -o $@ $(OBJ)
 	@echo "$(_GREEN)[$(EXEC): Executable created]$(_NO_COLOR)"
 
-$(OBJS_PATH)%.o : %.cpp
-	@mkdir -p $(OBJS_PATH) $(DEP_PATH)
+$(OBJ_PATH)%.o : %.cpp
+	@mkdir -p $(OBJ_PATH) $(DEP_PATH)
 	@echo "$(_GREY)Compiling : $<$(_NO_COLOR)"
-	@$(CC) -o $@ -c $< $(CFLAGS) $(IFLAGS)
+	@$(CC) -o $@ -c $< $(CFLAGS)
 	@mv $(@:.o=.d) $(DEP_PATH)
 
 -include $(DEP)
@@ -52,7 +52,7 @@ $(OBJS_PATH)%.o : %.cpp
 all		: $(EXEC)
 
 clean	:
-	@rm -rf $(OBJS_PATH) $(DEP_PATH)
+	@rm -rf $(OBJ_PATH) $(DEP_PATH)
 	@echo "$(_RED)[$(EXEC): All objects removed]$(_NO_COLOR)"
 
 fclean	: clean
