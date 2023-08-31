@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 13:47:29 by abrisse           #+#    #+#             */
-/*   Updated: 2022/12/27 14:32:52 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/08/31 15:43:07 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #ifndef DEBUG
 
-CopyAndReplace::CopyAndReplace( std::string const & filename ) : _ifs(filename), _ofs(filename + ".replace")
+CopyAndReplace::CopyAndReplace( std::string const & filename ) : _ifs(filename.c_str()), _ofs((filename + ".replace").c_str())
 {
 	if (!_ifs)
 	{
