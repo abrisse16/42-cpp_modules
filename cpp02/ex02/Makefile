@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/27 14:37:11 by abrisse           #+#    #+#              #
-#    Updated: 2023/08/28 21:42:08 by abrisse          ###   ########.fr        #
+#    Updated: 2023/09/02 13:18:59 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,10 @@ DEP		= $(addprefix $(DEP_PATH), $(SRC:.cpp=.d))
 
 # COMPILATION
 $(EXEC)	: $(OBJ)
-	@$(CC) $(CFLAGS) -o $@ $(OBJS)
+	@$(CC) $(CFLAGS) -o $@ $(OBJ)
 	@echo "$(_GREEN)[$(EXEC): Executable created]$(_NO_COLOR)"
 
-$(OBJS_PATH)%.o : %.cpp
+$(OBJ_PATH)%.o : %.cpp
 	@mkdir -p $(OBJ_PATH) $(DEP_PATH)
 	@echo "$(_GREY)Compiling : $<$(_NO_COLOR)"
 	@$(CC) -o $@ -c $< $(CFLAGS)
