@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 22:24:07 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 00:53:01 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/02 13:27:44 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class ScavTrap : public ClapTrap
 {
 	public:
+		ScavTrap( void );
 		ScavTrap( std::string );
 		ScavTrap( ScavTrap const & );
 		ScavTrap &	operator=( ScavTrap const & );

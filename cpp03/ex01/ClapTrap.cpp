@@ -6,16 +6,25 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 23:19:03 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 00:56:55 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/02 14:03:47 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( std::string name ) : _name ( name )
+ClapTrap::ClapTrap( void ) : _name ( "Default" )
 {
 	std::cout << "ClapTrap Default constructor called" << std::endl;
+	_hitPoints = 10;
+	_energyPoints = 10;
+	_attackDamage = 0;
+	return;
+}
+
+ClapTrap::ClapTrap( std::string name ) : _name ( name )
+{
+	std::cout << "ClapTrap String constructor called" << std::endl;
 	_hitPoints = 10;
 	_energyPoints = 10;
 	_attackDamage = 0;

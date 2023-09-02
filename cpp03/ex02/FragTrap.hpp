@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 22:24:07 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 11:09:20 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/02 14:06:16 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class FragTrap : public ClapTrap
 {
 	public:
+		FragTrap( void );
 		FragTrap( std::string );
 		FragTrap( FragTrap const & );
 		FragTrap &	operator=( FragTrap const & );

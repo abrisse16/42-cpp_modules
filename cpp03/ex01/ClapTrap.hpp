@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 22:24:07 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 01:01:52 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/02 13:24:21 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;
 	public:
+		ClapTrap( void );
 		ClapTrap( std::string name );
 		ClapTrap( ClapTrap const & );
 		ClapTrap &	operator=( ClapTrap const & );
