@@ -6,14 +6,14 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 23:19:03 by abrisse           #+#    #+#             */
-/*   Updated: 2023/09/02 14:07:12 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/02 18:47:47 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void ) : ClapTrap( "Default" )
+FragTrap::FragTrap( void ) : ClapTrap( )
 {
 	std::cout << "FragTrap Default constructor called" << std::endl;
 	_hitPoints = 100;

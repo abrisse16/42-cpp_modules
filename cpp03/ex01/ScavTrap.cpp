@@ -6,14 +6,14 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 23:19:03 by abrisse           #+#    #+#             */
-/*   Updated: 2023/09/02 14:04:03 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/02 18:44:58 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) : ClapTrap( "Default" )
+ScavTrap::ScavTrap( void ) : ClapTrap( )
 {
 	std::cout << "ScavTrap Default constructor called" << std::endl;
 	_hitPoints = 100;
