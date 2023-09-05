@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:30:17 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 23:02:25 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/06 00:06:05 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Animal
 		
 	public:
 		Animal( void );
-		Animal( Animal const & );
-		Animal &	operator=( Animal const & );
+		Animal( Animal const & src );
+		Animal &	operator=( Animal const & rhs );
 		virtual ~Animal( void );
 
 		virtual void	makeSound( void ) const;

@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:34:31 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 23:05:13 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/06 00:11:24 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Animal::~Animal( void )
 
 void	Animal::makeSound( void ) const
 {
-	std::cout << _type << ": *do a weird sound*" << std::endl;
+	std::cout << _type << ": *weird sound*" << std::endl;
 }
 
 std::string	Animal::getType( void ) const

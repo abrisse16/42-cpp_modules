@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:30:17 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 23:13:11 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/06 00:17:07 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat( void );
-		WrongCat( WrongCat const & );
-		WrongCat &	operator=( WrongCat const & );
+		WrongCat( WrongCat const & src );
+		WrongCat &	operator=( WrongCat const & rhs );
 		~WrongCat( void );
 
 		void	makeSound( void ) const;

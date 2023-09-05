@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:30:17 by abrisse           #+#    #+#             */
-/*   Updated: 2023/02/07 23:11:52 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/06 00:06:57 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Dog : public Animal
 {
 	public:
 		Dog( void );
-		Dog( Dog const & );
-		Dog &	operator=( Dog const & );
+		Dog( Dog const & src );
+		Dog &	operator=( Dog const & rhs );
 		~Dog( void );
 
 		void	makeSound( void ) const;
