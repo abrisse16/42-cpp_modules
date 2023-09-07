@@ -18,5 +18,7 @@ int	main()
 	delete	j;
 	delete	i;
 
+	std::cout << std::endl;
+
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:34:31 by abrisse           #+#    #+#             */
-/*   Updated: 2023/09/06 00:23:48 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/09/07 17:32:39 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,6 @@ Animal &	Animal::operator=( Animal const & rhs )
 Animal::~Animal( void )
 {
 	std::cout << "Animal Destructor called" << std::endl;
-}
-
-void	Animal::makeSound( void ) const
-{
-	std::cout << _type << ": *weird sound*" << std::endl;
 }
 
 std::string	Animal::getType( void ) const
