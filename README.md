@@ -3,9 +3,9 @@
 # CPP Modules
 
 ### 42 Common Core / circle #4 & #5
-<i>Our first RayCaster with MiniLibX
-<br>
-This project is inspired by the world-famous Wolfenstein 3D game, which was the first FPS ever.</i>
+<i>
+Our first introduction to C++ and its object-oriented programming paradigm. This pool is designed to help us understand the specifities of the language when compared to C, and to get used to the syntax and the way of thinking in C++. We will learn about namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff. This is a very important pool, as it will be the basis for the next projects.
+</i>
 
 ##
 
