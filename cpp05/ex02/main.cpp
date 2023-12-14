@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:10:30 by abrisse           #+#    #+#             */
-/*   Updated: 2023/11/03 20:56:08 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 11:06:42 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int main()
 	{
 		Bureaucrat	jim("Jim", 150);
 		Bureaucrat	michael("Michael", 1);
-		ShrubberyCreationForm	homeShrubbery("Home Shrubbery Form", "Home");
-		RobotomyRequestForm		robotomyRequest("Robotomy Form", "Bender");
-		PresidentialPardonForm	presidentialPardon("Pardon Form", "Ted");
+		ShrubberyCreationForm	homeShrubbery("Home");
+		RobotomyRequestForm		robotomyRequest("Bender");
+		PresidentialPardonForm	presidentialPardon("Ted");
 
 		std::cout << jim << std::endl;
 		std::cout << michael << std::endl;

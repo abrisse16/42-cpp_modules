@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:12:59 by abrisse           #+#    #+#             */
-/*   Updated: 2023/11/03 18:29:44 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 11:06:46 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm &	operator=( RobotomyRequestForm const & );
 		~RobotomyRequestForm( void );
 
-		RobotomyRequestForm( const std::string &name, const std::string &target);
+		RobotomyRequestForm( const std::string &target);
 
 		void	execute( Bureaucrat const & executor ) const;
 };
