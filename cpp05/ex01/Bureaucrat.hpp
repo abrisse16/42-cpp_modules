@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:08:39 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/14 10:29:19 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 10:34:42 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 #include <string>
 #include <iostream>
 
+class Form;
+
 class Bureaucrat
 {
 	private:
 		const std::string	_name;
 		int					_grade;
-		
+
 	public:
 		Bureaucrat( void );
 		Bureaucrat( Bureaucrat const & );
@@ -46,6 +48,8 @@ class Bureaucrat
 
 		void	incrementGrade( void );
 		void	decrementGrade( void );
+
+		void	signForm( Form & form ) const;
 };
 
 std::ostream &	operator<<( std::ostream & o, Bureaucrat const & rhs );

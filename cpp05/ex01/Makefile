@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 14:57:20 by abrisse           #+#    #+#              #
-#    Updated: 2023/10/24 12:11:52 by abrisse          ###   ########.fr        #
+#    Updated: 2023/10/24 12:12:10 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ _GREEN		=	$'\033[1;32m
 _NO_COLOR	=	$'\033[m
 
 # VARIABLE
-EXEC	= Bureaucrat
+EXEC	= Form
 
 CC		= c++
 
@@ -36,6 +36,7 @@ OBJ_PATH    = objs/
 DEP_PATH    = deps/
 
 SRC        = Bureaucrat.cpp \
+			 Form.cpp \
 			 main.cpp
 OBJ        = $(addprefix $(OBJ_PATH), $(SRC:.cpp=.o))
 DEP        = $(addprefix $(DEP_PATH), $(SRC:.cpp=.d))
