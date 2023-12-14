@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:08:39 by abrisse           #+#    #+#             */
-/*   Updated: 2023/11/03 20:41:39 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 10:59:11 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Bureaucrat
 	private:
 		const std::string	_name;
 		int					_grade;
+
 	public:
 		Bureaucrat( void );
 		Bureaucrat( Bureaucrat const & );

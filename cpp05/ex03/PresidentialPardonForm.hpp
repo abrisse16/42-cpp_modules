@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:52:55 by abrisse           #+#    #+#             */
-/*   Updated: 2023/11/03 19:44:57 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 11:18:14 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class   PresidentialPardonForm : public AForm
         PresidentialPardonForm &    operator=( PresidentialPardonForm const & );
         ~PresidentialPardonForm( void );
 
-        PresidentialPardonForm( const std::string &name, const std::string &target);
+        PresidentialPardonForm( const std::string &target);
 
         void    execute( Bureaucrat const & executor ) const;
 };

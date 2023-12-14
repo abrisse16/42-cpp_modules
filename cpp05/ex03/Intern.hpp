@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 21:10:10 by abrisse           #+#    #+#             */
-/*   Updated: 2023/11/03 21:14:48 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 11:46:47 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@
 class Intern
 {
     private:
-        static AForm * _makePresidentialPardonForm( std::string const & name, std::string const & target );
-        static AForm * _makeRobotomyRequestForm( std::string const & name, std::string const & target );
-        static AForm * _makeShrubberyCreationForm( std::string const & name, std::string const & target );
+        static AForm * _makePresidentialPardonForm( std::string const & target );
+        static AForm * _makeRobotomyRequestForm( std::string const & target );
+        static AForm * _makeShrubberyCreationForm( std::string const & target );
+    
     public:
         Intern( void );
         Intern( Intern const & );
@@ -32,4 +33,4 @@ class Intern
         ~Intern( void );
 
         AForm * makeForm( std::string const & name, std::string const & target );
-}
+};

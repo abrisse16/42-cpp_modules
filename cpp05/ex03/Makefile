@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 14:57:20 by abrisse           #+#    #+#              #
-#    Updated: 2023/11/03 21:09:41 by abrisse          ###   ########.fr        #
+#    Updated: 2023/12/14 11:52:57 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ _GREEN		=	$'\033[1;32m
 _NO_COLOR	=	$'\033[m
 
 # VARIABLE
-EXEC	= Form
+EXEC	= Intern
 
 CC		= c++
 

@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:20:48 by abrisse           #+#    #+#             */
-/*   Updated: 2023/11/03 20:58:02 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/14 11:18:44 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ const std::string ShrubberyCreationForm::_tree(	"		  .     .  .      +     .    
 												"       .         .   .   000     .        .       .\n"
 												".. .. ..................O000O........................ ...... ...");
 
-ShrubberyCreationForm::ShrubberyCreationForm( void ) : AForm("ShrubberyCreationForm", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm( void ) : AForm("Shrubbery Creation Form", 145, 137), _target("default")
 {
 }
 
@@ -61,7 +61,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void )
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( const std::string &name, const std::string &target) : AForm(name, 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm( const std::string &target) : AForm("Shrubbery Creation Form", 145, 137), _target(target)
 {
 }
 
