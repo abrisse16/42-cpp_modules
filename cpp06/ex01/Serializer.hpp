@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:36:04 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/18 17:35:43 by abrisse          ###   ########.fr       */
+/*   Created: 2023/12/18 17:28:13 by abrisse           #+#    #+#             */
+/*   Updated: 2023/12/18 18:07:46 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 
-#include <limits.h>
-#include <float.h>
+#include <string>
 
-#include "ScalarConverter.hpp"
-
-int	main(int ac, char **av)
+struct Data
 {
-	if (ac != 2) {
-		std::cout << "usage: ./convert [string]" << std::endl;
-		return 0;
-	}
-	try {
-		ScalarConverter::convert(av[1]);
-	}
-	catch (std::exception &e) {
-		std::cout << "error: " << e.what() << std::endl;
-	}
+    int nbr;
+    std::string str;
+};
 
-	return 0;
-}
+class Serializer
+{
+    private:
+
+        Serializer();
+        Serializer(Serializer const &);
+        ~Serializer();
+        Serializer & operator=(Serializer const &);
+    
+
+    public:
+    
+        static uintptr_t    serialize(Data *ptr);
+        static Data *       deserialize(uintptr_t raw);
+};

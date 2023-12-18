@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:43:28 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/17 18:45:09 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/18 17:56:06 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ enum e_type
 
 class ScalarConverter
 {
-	public:
+	private:
 
 		ScalarConverter(void);
 		ScalarConverter(ScalarConverter const &);
 		~ScalarConverter(void);
 		ScalarConverter & operator=(ScalarConverter const &);
+
+
+	public:
 
 		static void	convert(const std::string &in);
 };

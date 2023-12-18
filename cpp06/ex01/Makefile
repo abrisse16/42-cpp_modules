@@ -6,7 +6,7 @@
 #    By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 18:24:19 by abrisse           #+#    #+#              #
-#    Updated: 2023/12/18 19:20:52 by abrisse          ###   ########.fr        #
+#    Updated: 2023/12/18 19:20:53 by abrisse          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ _NO_COLOR	= $'\033[m
 
 # VARIABLE
 
-EXEC	= ScalarConverter
+EXEC	= Serialization
 
 CC		= c++
 
@@ -38,7 +38,7 @@ endif
 OBJ_PATH	= objs/
 DEP_PATH	= deps/
 
-SRC			= ScalarConverter.cpp	\
+SRC			= Serializer.cpp	\
 			  main.cpp
 OBJ			= $(addprefix $(OBJ_PATH), $(SRC:.cpp=.o))
 DEP			= $(addprefix $(DEP_PATH), $(SRC:.cpp=.d))

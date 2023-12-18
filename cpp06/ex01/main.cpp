@@ -5,30 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:36:04 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/18 17:35:43 by abrisse          ###   ########.fr       */
+/*   Created: 2023/12/18 18:00:34 by abrisse           #+#    #+#             */
+/*   Updated: 2023/12/18 18:08:46 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include <limits.h>
-#include <float.h>
+#include "Serializer.hpp"
 
-#include "ScalarConverter.hpp"
-
-int	main(int ac, char **av)
+int main()
 {
-	if (ac != 2) {
-		std::cout << "usage: ./convert [string]" << std::endl;
-		return 0;
-	}
-	try {
-		ScalarConverter::convert(av[1]);
-	}
-	catch (std::exception &e) {
-		std::cout << "error: " << e.what() << std::endl;
-	}
+    Data data;
+    data.nbr = 42;
+    data.str = "Hello World !";
 
-	return 0;
+    uintptr_t raw = Serializer::serialize(&data);
+    Data *dataPtr = Serializer::deserialize(raw);
+
+    if (&data == dataPtr)
+        std::cout << "Data and dataPtr are the same" << std::endl;
+    else
+        std::cout << "Data and dataPtr are different" << std::endl;
+
+    return 0;
 }
