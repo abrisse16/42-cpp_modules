@@ -5,24 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 19:31:43 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/17 16:02:33 by abrisse          ###   ########.fr       */
+/*   Created: 2023/12/17 17:46:12 by abrisse           #+#    #+#             */
+/*   Updated: 2023/12/18 12:25:50 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <limits.h>
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter(void) : _in("")
+ScalarConverter::ScalarConverter(void)
 {
 }
 
-ScalarConverter::ScalarConverter(ScalarConverter const & src) : _in(src._in)
+ScalarConverter::ScalarConverter(ScalarConverter const & src)
 {
+    *this = src;
 }
 
 ScalarConverter::~ScalarConverter(void)
@@ -31,255 +33,272 @@ ScalarConverter::~ScalarConverter(void)
 
 ScalarConverter & ScalarConverter::operator=(ScalarConverter const & rhs)
 {
-	if (this != &rhs)
-		_in = rhs._in;
-	return *this;
+    (void)rhs;
+    return *this;
 }
 
-ScalarConverter::ScalarConverter(const std::string &in) : _in(in)
+void    display(std::stringstream &ssChar, std::stringstream &ssInt, std::stringstream &ssFloat, std::stringstream &ssDouble)
 {
-	if (_in.empty())
-		throw std::invalid_argument("empty string");
-	if (_isChar())
-	{
-		_type = CHAR;
-		_longValue = static_cast<long>(_in[0]);
-	}
-	else if (_isInt())
-	{
-		_type = INT;
-		_longValue = std::strtol(_in.c_str(), NULL, 10);
-		if (_longValue > INT_MAX || _longValue < INT_MIN)
-			throw std::invalid_argument("int overflow");
-	}
-	else if (_isFloat())
-	{
-		_type = FLOAT;
-		float	floatValue = std::strtof(_in.c_str(), NULL);
-
-		// _longValue = static_cast<long>(floatValue);			// ne fonctionne pas car on perd la précision
-		_longValue = reinterpret_cast<long&>(floatValue);		// reinterpret_cast permet de convertir un float en long sans perdre la précision
-	}
-	else if (_isDouble())
-	{
-		_type = DOUBLE;
-		double	doubleValue = std::strtod(_in.c_str(), NULL);
-		_longValue = reinterpret_cast<long&>(doubleValue);
-	}
-	else if (_isLiteral())
-	{
-		_type = LITERAL;
-	}
-	else
-		throw std::invalid_argument("invalid argument");
+    std::cout << std::setw(8) << "char: " << ssChar.str() << std::endl;
+	std::cout << std::setw(8) << "int: " << ssInt.str() << std::endl;
+	std::cout << std::setw(8) << "float: " << ssFloat.str() << std::endl;
+	std::cout << std::setw(8) << "double: " << ssDouble.str() << std::endl;
 }
 
-void	ScalarConverter::convert(void) const
+bool	isChar(const std::string &in)
 {
-	switch (_type)
-	{
-		case CHAR:
-			_convertFromChar();
-			break;
-		case INT:
-			_convertFromInt();
-			break;
-		case FLOAT:
-			_convertFromFloat();
-			break;
-		case DOUBLE:
-			_convertFromDouble();
-			break;
-		case LITERAL:
-			_convertFromLiteral();
-			break;
-	}
-}
-
-bool	ScalarConverter::_isChar(void) const
-{
-		if (_in.length() == 1 && !isdigit(_in[0]))
+		if (in.length() == 1 && !isdigit(in[0]))
 			return true;
 		return false;
 }
 
-bool	ScalarConverter::_isInt(void) const
+bool	isInt(const std::string &in)
 {
-	for (size_t i = 0; i < _in.length(); i++)
+	for (size_t i = 0; i < in.length(); i++)
 	{
-		if (!isdigit(_in[i]) && !(i == 0 && (_in[i] == '-' || _in[i] == '+')))
+		if (!isdigit(in[i]) && !(i == 0 && (in[i] == '-' || in[i] == '+')))
 			return false;
 	}
 	return true;
 }
 
-bool	ScalarConverter::_isDouble(void) const
+bool	isDouble(const std::string &in)
 {
 	size_t i;
 
-	for (i = 0; i < _in.length(); i++)
+	for (i = 0; i < in.length(); i++)
 	{
-		if (!isdigit(_in[i]) && !(i == 0 && (_in[i] == '-' || _in[i] == '+')) && _in[i] != '.')
+		if (!isdigit(in[i]) && !(i == 0 && (in[i] == '-' || in[i] == '+')) && in[i] != '.')
 			return false;
-		if (_in[i] == '.')
+		if (in[i] == '.')
 			break;
 	}
-	if (i == _in.length() - 1)
+	if (i == in.length() - 1)
 		return false;
-	for (i = i + 1; i < _in.length(); i++)
+	for (i = i + 1; i < in.length(); i++)
 	{
-		if (!isdigit(_in[i]))
+		if (!isdigit(in[i]))
 			return false;
 	}
 	return true;
 }
 
-bool	ScalarConverter::_isFloat(void) const
+bool	isFloat(const std::string &in) 
 {
 	size_t i;
 
-	for (i = 0; i < _in.length(); i++)
+	for (i = 0; i < in.length(); i++)
 	{
-		if (!isdigit(_in[i]) && !(i == 0 && (_in[i] == '-' || _in[i] == '+')) && _in[i] != '.')
+		if (!isdigit(in[i]) && !(i == 0 && (in[i] == '-' || in[i] == '+')) && in[i] != '.')
 			return false;
-		if (_in[i] == '.')
+		if (in[i] == '.')
 			break;
 	}
-	if (i == _in.length() - 1)
+	if (i == in.length() - 1)
 		return false;
-	for (i = i + 1; i < _in.length() - 1; i++)
+	for (i = i + 1; i < in.length() - 1; i++)
 	{
-		if (!isdigit(_in[i]))
+		if (!isdigit(in[i]))
 			return false;
 	}
-	if (_in[i] != 'f')
+	if (in[i] != 'f')
 		return false;
 	return true;
 }
 
-bool	ScalarConverter::_isLiteral(void) const
+bool	isLiteral(const std::string &in)
 {
-	std::string oth[6] = {"nan", "nanf", "-inf", "+inf", "-inff", "+inff"};
+	std::string litteral[6] = {"nan", "nanf", "-inf", "+inf", "-inff", "+inff"};
 	for (int i = 0; i < 6; i++)
-		if (_in == oth[i])
+		if (in == litteral[i])
 			return true;
 	return false;
 }
 
-void	ScalarConverter::_convertFromChar(void) const
+e_type  checkType(const std::string &in)
 {
-	char c = static_cast<char>(_longValue);
-	std::stringstream ssChar;
-	std::stringstream ssInt;
-	std::stringstream ssFloat;
-	std::stringstream ssDouble;
-
-	if (std::isprint(c))
-		ssChar << "'" << c << "'";
-	else
-		ssChar << "non displayable";
-	ssInt << static_cast<int>(_longValue);
-	ssFloat << static_cast<float>(_longValue) << ".0f";
-	ssDouble << static_cast<double>(_longValue) << ".0";
-
-	_display(ssChar, ssInt, ssFloat, ssDouble);
+    if (isChar(in))
+        return CHAR;
+    if (isInt(in))
+        return INT;
+    if (isFloat(in))
+        return FLOAT;
+    if (isDouble(in))
+        return DOUBLE;
+    if (isLiteral(in))
+        return LITERAL;
+    return UNKNOWN;
 }
 
-void	ScalarConverter::_convertFromInt(void) const
+void    convertFromChar(const std::string &in)
 {
-	int	i = static_cast<int>(_longValue);
-	std::stringstream ssChar;
-	std::stringstream ssInt;
-	std::stringstream ssFloat;
-	std::stringstream ssDouble;
+    std::stringstream   ssChar;
+    std::stringstream   ssInt;
+	std::stringstream   ssFloat;
+	std::stringstream   ssDouble;
 
-	if (std::isprint(i))
-		ssChar << "'" << static_cast<char>(i) << "'";
-	else if (isascii(i))
-		ssChar << "non displayable";
-	else
-		ssChar << "impossible";
-	ssInt << i;
-	ssFloat << static_cast<float>(_longValue) << ".0f";
-	ssDouble << static_cast<double>(_longValue) << ".0";
+    if (std::isprint(in[0]))
+        ssChar << "'" << in << "'";
+    else
+        ssChar << "non displayable";
+    ssInt << static_cast<int>(in[0]);
+    ssFloat << static_cast<float>(in[0]) << ".0f";
+    ssDouble << static_cast<double>(in[0]) << ".0";
 
-	_display(ssChar, ssInt, ssFloat, ssDouble);
+    display(ssChar, ssInt, ssFloat, ssDouble);
 }
 
-void	ScalarConverter::_convertFromFloat(void) const
+void    convertFromInt(const std::string &in)
 {
-	float	f = *reinterpret_cast<const float*>(&_longValue);
-	std::stringstream ssChar;
-	std::stringstream ssInt;
-	std::stringstream ssFloat;
-	std::stringstream ssDouble;
+    std::stringstream   ssChar;
+    std::stringstream   ssInt;
+	std::stringstream   ssFloat;
+	std::stringstream   ssDouble;
+    
+    long long longValue = std::strtoll(in.c_str(), NULL, 10);
+    if (longValue > std::numeric_limits<int>::max() || longValue < std::numeric_limits<int>::min())
+        throw std::invalid_argument("int overflow");
+    int intValue = static_cast<int>(longValue);
 
-	if (std::isprint(f))
-		ssChar << "'" << static_cast<char>(f) << "'";
-	else if (isascii(f))
-		ssChar << "non displayable";
-	else
-		ssChar << "impossible";
-	ssInt << static_cast<int>(f);
-	ssFloat << f << "f";
-	ssDouble << static_cast<double>(f);
+    if (std::isprint(intValue))
+        ssChar << "'" << static_cast<char>(intValue) << "'";
+    else if (isascii(intValue))
+        ssChar << "non displayable";
+    else
+        ssChar << "impossible";
+    ssInt << intValue;
+    ssFloat << static_cast<float>(intValue) << ".0f";
+    ssDouble << static_cast<double>(intValue) << ".0";
 
-	_display(ssChar, ssInt, ssFloat, ssDouble);
+    display(ssChar, ssInt, ssFloat, ssDouble);
 }
 
-void	ScalarConverter::_convertFromDouble(void) const
+void    convertFromFloat(const std::string &in)
 {
-	double	d = *reinterpret_cast<const double*>(&_longValue);
-	std::stringstream ssChar;
-	std::stringstream ssInt;
-	std::stringstream ssFloat;
-	std::stringstream ssDouble;
+    std::stringstream   ssChar;
+    std::stringstream   ssInt;
+	std::stringstream   ssFloat;
+	std::stringstream   ssDouble;
 
-	if (std::isprint(d))
-		ssChar << "'" << static_cast<char>(d) << "'";
-	else if (isascii(d))
-		ssChar << "non displayable";
-	else
-		ssChar << "impossible";
-	ssInt << static_cast<int>(d);
-	ssFloat << static_cast<float>(d) << "f";
-	ssDouble << d;
+    double doubleValue = std::strtod(in.c_str(), NULL);
+    if (doubleValue > std::numeric_limits<float>::max() || doubleValue < std::numeric_limits<float>::min())
+        throw std::invalid_argument("float overflow");
+    float floatValue = static_cast<float>(doubleValue);
+    
+    if (std::isprint(floatValue))
+        ssChar << "'" << static_cast<char>(floatValue) << "'";
+    else if (isascii(floatValue))
+        ssChar << "non displayable";
+    else
+        ssChar << "impossible";
+    if (doubleValue > std::numeric_limits<int>::max() || doubleValue < std::numeric_limits<int>::min())
+        ssInt << "impossible";
+    else
+        ssInt << static_cast<int>(doubleValue);
+    if (floatValue - static_cast<int>(doubleValue) == 0)
+    {
+        ssFloat << floatValue << ".0f";
+        ssDouble << static_cast<double>(floatValue) << ".0";
+    }
+    else
+    {
+        ssFloat << floatValue << "f";
+        ssDouble << static_cast<double>(floatValue);
+    }
 
-	_display(ssChar, ssInt, ssFloat, ssDouble);
+    display(ssChar, ssInt, ssFloat, ssDouble);
 }
 
-void	ScalarConverter::_convertFromLiteral(void) const
+void    convertFromDouble(const std::string &in)
 {
-	std::stringstream ssChar;
-	std::stringstream ssInt;
-	std::stringstream ssFloat;
-	std::stringstream ssDouble;
+    std::stringstream   ssChar;
+    std::stringstream   ssInt;
+	std::stringstream   ssFloat;
+	std::stringstream   ssDouble;
 
-	ssChar << "impossible";
-	ssInt << "impossible";
-	if (_in == "-inff" || _in == "-inf")
-	{
-		ssFloat << "-inff";
-		ssDouble << "-inf";
-	}
-	else if (_in == "+inff" || _in == "+inf")
-	{
-		ssFloat << "+inff";
-		ssDouble << "+inf";
-	}
-	else
-	{
-		ssFloat << "nanf";
-		ssDouble << "nan";
-	}
+    long double longDoubleValue = std::strtold(in.c_str(), NULL);
+    if (longDoubleValue > std::numeric_limits<double>::max() || longDoubleValue < std::numeric_limits<double>::min())
+        throw std::invalid_argument("double overflow");
+    double  doubleValue = static_cast<double>(longDoubleValue);
 
-	_display(ssChar, ssInt, ssFloat, ssDouble);
+    if (std::isprint(doubleValue))
+        ssChar << "'" << static_cast<char>(doubleValue) << "'";
+    else if (isascii(doubleValue))
+        ssChar << "non displayable";
+    else
+        ssChar << "impossible";
+    if (doubleValue > std::numeric_limits<int>::max() || doubleValue < std::numeric_limits<int>::min())
+        ssInt << "impossible";
+    else
+        ssInt << static_cast<int>(doubleValue);
+    if (longDoubleValue > std::numeric_limits<float>::max() || longDoubleValue < std::numeric_limits<float>::min())
+        ssFloat << "impossible";
+    else if (doubleValue - static_cast<int>(doubleValue) == 0)
+        ssFloat << static_cast<float>(doubleValue) << ".0f";
+    else
+        ssFloat << static_cast<float>(doubleValue) << "f";
+
+    if (doubleValue - static_cast<int>(doubleValue) == 0)
+        ssDouble << doubleValue << ".0";
+    else
+        ssDouble << doubleValue;
+    
+    display(ssChar, ssInt, ssFloat, ssDouble);
 }
 
-void	ScalarConverter::_display(std::stringstream &ssChar, std::stringstream &ssInt, std::stringstream &ssFloat, std::stringstream &ssDouble) const
+void    convertFromLiteral(const std::string &in)
 {
-	std::cout << std::setw(8) << "char: " << ssChar.str() << std::endl;
-	std::cout << std::setw(8) << "int: " << ssInt.str() << std::endl;
-	std::cout << std::setw(8) << "float: " << ssFloat.str() << std::endl;
-	std::cout << std::setw(8) << "double: " << ssDouble.str() << std::endl;
+    std::stringstream   ssChar;
+    std::stringstream   ssInt;
+	std::stringstream   ssFloat;
+	std::stringstream   ssDouble;
+
+    ssChar << "impossible";
+    ssInt << "impossible";
+    if (in == "-inff" || in == "-inf")
+    {
+        ssFloat << "-inff";
+        ssDouble << "-inf";
+    }
+    else if (in == "+inff" || in == "+inf")
+    {
+        ssFloat << "+inff";
+        ssDouble << "+inf";
+    }
+    else
+    {
+        ssFloat << "nanf";
+        ssDouble << "nan";
+    }
+
+    display(ssChar, ssInt, ssFloat, ssDouble);
+}
+
+
+void	ScalarConverter::convert(const std::string &in)
+{
+    if (in.empty())
+        throw std::invalid_argument("empty string");
+
+    switch(checkType(in))
+    {
+        case CHAR:
+            convertFromChar(in);
+            break;
+        case INT:
+            convertFromInt(in);
+            break;
+        case FLOAT:
+            convertFromFloat(in);
+            break;
+        case DOUBLE:
+            convertFromDouble(in);
+            break;
+        case LITERAL:
+            convertFromLiteral(in);
+            break;
+        case UNKNOWN:
+            throw std::invalid_argument("invalid argument");
+            break;
+    }
 }
