@@ -6,12 +6,13 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:10:30 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/14 11:06:42 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/19 15:06:08 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <exception>
 #include <iostream>
+#include <cstdlib>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"

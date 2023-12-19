@@ -6,12 +6,13 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:10:30 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/14 11:57:56 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/19 15:08:04 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <exception>
 #include <iostream>
+#include <cstdlib>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
@@ -46,6 +47,8 @@ int main()
 	delete ppf;
 
 	AForm*	other = someRandomIntern.makeForm("machin request", "Bender");
+	if (other)
+		delete other;
 
 	return 0;
 }
