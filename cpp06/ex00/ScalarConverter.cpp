@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:46:12 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/18 17:36:20 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/23 13:21:46 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-#include <limits.h>
+#include <cstdlib>
+#include <limits>
 
 #include "ScalarConverter.hpp"
 
