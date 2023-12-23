@@ -6,13 +6,14 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:28:13 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/18 18:07:46 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/23 13:30:03 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <stdint.h>
 
 struct Data
 {

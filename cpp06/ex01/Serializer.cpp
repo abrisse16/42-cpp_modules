@@ -6,11 +6,13 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:58:06 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/18 18:00:08 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/23 13:30:30 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+
+#include <stdint.h>
 
 Serializer::Serializer()
 {
