@@ -6,11 +6,12 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 23:10:08 by abrisse           #+#    #+#             */
-/*   Updated: 2023/12/27 00:06:21 by abrisse          ###   ########.fr       */
+/*   Updated: 2023/12/27 12:22:39 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 #include "Array.hpp"
 
