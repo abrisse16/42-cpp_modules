@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 05:42:37 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 12:58:55 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 15:12:27 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,9 +164,9 @@ void	PmergeMe::runVectorSort(void)
 	// Step 5
 	// 5.1 Partition the uninserted elements
 	std::vector<std::vector<int> >	groups;
-	int	size = 2;
-	int	previousSize = 0;
-	int	power = 2;
+	int		size = 2;
+	int		previousSize = 0;
+	int		power = 2;
 	size_t	index = 0;
 
 	while (index < remainingElements.size())
@@ -206,6 +206,78 @@ void	PmergeMe::runVectorSort(void)
 			// std::cout << "Inserting " << groups[i][j - 1] << std::endl;
 	 		std::vector<int>::iterator insertionPoint = std::upper_bound(_vectorSequence.begin(), _vectorSequence.end(), groups[i][j - 1]);
 	 		_vectorSequence.insert(insertionPoint, groups[i][j - 1]);
+		}
+	}
+}
+
+void	PmergeMe::runDequeSort(void)
+{
+	std::deque<pairInt>	pairs;
+	deqIntIter			it = _dequeSequence.begin();
+	int					lastValue = -1;
+
+	// Step 1
+	if (_sequenceSize % 2 == 1)
+	{
+		lastValue = *it;
+		it++;
+	}
+	for (; it != _dequeSequence.end(); it += 2)
+	{
+		pairInt	pair(*it, *(it + 1));
+
+		// Step 2
+		if (pair.first < pair.second)
+			std::swap(pair.first, pair.second);
+		pairs.push_back(pair);
+	}
+	_dequeSequence.clear();
+
+	// Step 3
+	std::sort(pairs.begin(), pairs.end());
+
+	for (deqPairIter it = pairs.begin(); it != pairs.end(); it++)
+		_dequeSequence.push_back(it->first);
+
+	// Step 4
+	deqIntIter	deqIter = _dequeSequence.begin();
+	_dequeSequence.insert(deqIter, pairs.begin()->second);
+
+	std::deque<int>	remainingElements;
+	for (deqPairIter it = pairs.begin() + 1; it != pairs.end(); it++)
+		remainingElements.push_back(it->second);
+	if (lastValue != -1)
+		remainingElements.push_back(lastValue);
+
+	// Step 5
+	std::deque<std::deque<int> >	groups;
+	int		size = 2;
+	int		previousSize = 0;
+	int		power = 2;
+	size_t	index = 0;
+
+	while (index < remainingElements.size())
+	{
+		std::deque<int>	group;
+		for (int i = 0; i < size && index < remainingElements.size(); ++i)
+		{
+			group.push_back(remainingElements[index]);
+			++index;
+		}
+		groups.push_back(group);
+		power *= 2;
+		previousSize = size;
+
+		while (size + previousSize < power)
+			size++;
+	}
+
+	for (size_t i = 0; i < groups.size(); ++i)
+	{
+		for (size_t j = groups[i].size(); j > 0; --j)
+		{
+			std::deque<int>::iterator insertionPoint = std::upper_bound(_dequeSequence.begin(), _dequeSequence.end(), groups[i][j - 1]);
+			_dequeSequence.insert(insertionPoint, groups[i][j - 1]);
 		}
 	}
 }

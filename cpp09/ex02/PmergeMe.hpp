@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 05:08:15 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 12:57:56 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 14:44:39 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PmergeMe
 		PmergeMe(int ac, char **av);
 
 		void	runVectorSort(void);
-		// void	runDequeSort(void);
+		void	runDequeSort(void);
 
 		void	displayElements(void) const;
 		void	displayVectorSequence(void) const;
@@ -50,6 +50,9 @@ class PmergeMe
 
 		typedef std::vector<int>::iterator		vecIntIter;
 		typedef	std::vector<pairInt>::iterator	vecPairIter;
+		
+		typedef	std::deque<int>::iterator		deqIntIter;
+		typedef	std::deque<pairInt>::iterator	deqPairIter;
 
 		size_t				_sequenceSize;
 };
