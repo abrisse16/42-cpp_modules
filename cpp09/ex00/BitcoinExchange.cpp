@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 23:55:08 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 05:02:43 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:17:53 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <cstdlib>
 
 #include "BitcoinExchange.hpp"
 
@@ -110,9 +111,9 @@ void	BitcoinExchange::parseFile(std::string const & inputFileName)
 	std::string		line;
 
 	if (!ifs || !std::getline(ifs, line))
-		throw FileException("nvalid or missing input file.");
+		throw FileException("invalid or missing input file.");
 	if (countColumns(line, '|') != 2)
-		throw FileException("nvalid or missing input file.");
+		throw FileException("invalid or missing input file.");
 	
 	while (std::getline(ifs, line))
 	{

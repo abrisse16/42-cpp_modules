@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 03:16:40 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 05:02:26 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:26:08 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <cstdlib>
 
 RPN::RPN() : _input("") { }
 
