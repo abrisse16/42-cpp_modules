@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 05:42:37 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 08:59:11 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:58:55 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <iostream>
 #include <sstream>
+#include <cstdlib>
+#include <climits>
+#include <algorithm>
 
 std::ostream &	operator <<(std::ostream & o, std::pair<int, int> const & rhs)
 {
@@ -99,6 +102,11 @@ void	PmergeMe::displayVectorSequence(void) const
 	display(_vectorSequence.begin(), _vectorSequence.end());
 }
 
+size_t	PmergeMe::getSequenceSize(void) const
+{
+	return (this->_sequenceSize);
+}
+
 // void	insertGoodPosition(std::vector<int> & vec, std::vector<int>::iterator & it, int value)
 // {
 // 	for (; it != vec.end(); it++)
@@ -177,15 +185,16 @@ void	PmergeMe::runVectorSort(void)
 			size++;
 	}
 
-	for (size_t i = 0; i < groups.size(); ++i)
-	{
-		std::cout << "Group " << i + 1 << ": ";
-		for (size_t j = 0; j < groups[i].size(); ++j)
-		{
-			std::cout << groups[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
+	// // Display groups 
+	// for (size_t i = 0; i < groups.size(); ++i)
+	// {
+	// 	std::cout << "Group " << i + 1 << ": ";
+	// 	for (size_t j = 0; j < groups[i].size(); ++j)
+	// 	{
+	// 		std::cout << groups[i][j] << " ";
+	// 	}
+	// 	std::cout << std::endl;
+	// }
 
 	// 5.2 Order the uninserted elements by their groups (smaller indexes to
 	// larger indexes), but within each group order them from larger indexes to
@@ -194,7 +203,7 @@ void	PmergeMe::runVectorSort(void)
 	{
 		for (size_t j = groups[i].size(); j > 0; --j)
 		{
-			std::cout << "Inserting " << groups[i][j - 1] << std::endl;
+			// std::cout << "Inserting " << groups[i][j - 1] << std::endl;
 	 		std::vector<int>::iterator insertionPoint = std::upper_bound(_vectorSequence.begin(), _vectorSequence.end(), groups[i][j - 1]);
 	 		_vectorSequence.insert(insertionPoint, groups[i][j - 1]);
 		}

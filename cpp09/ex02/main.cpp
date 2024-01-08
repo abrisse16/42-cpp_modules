@@ -6,11 +6,12 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 05:07:34 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 06:43:02 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 13:05:51 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 
 #include "PmergeMe.hpp"
 
@@ -44,6 +45,12 @@ double	launchTimer(PmergeMe & merge, void (PmergeMe::*func)(void))
 // 	return duration;
 // }
 
+void	printTimerResult(size_t n, double duration, std::string const & name)
+{
+	std::cout << "Time to process a range of " << std::setw(4) << n
+		<< " elements with " << name << " : " << std::fixed << duration << " ms" << std::endl;
+}
+
 int	main(int ac, char **av)
 {
 	if (ac <= 1)
@@ -57,8 +64,14 @@ int	main(int ac, char **av)
 		std::cout << std::endl;
 
 		double	durationVector = launchTimer(merge, &PmergeMe::runVectorSort);
+		// double	durationDeque = launchTimer(merge, &PmergeMe::runDequeSort);
 
-		std::cout << "Duration: " << durationVector << "ms" << std::endl;
+		std::cout << "After:\t";
+		merge.displayVectorSequence();
+		std::cout << std::endl;
+
+		printTimerResult(merge.getSequenceSize(), durationVector, "std::vector");
+		// printTimerResult(merge.getSequenceSize(), durationDeque, "std::deque");
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;

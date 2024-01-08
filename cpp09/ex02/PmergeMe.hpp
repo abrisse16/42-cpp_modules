@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 05:08:15 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/08 08:57:20 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 12:57:56 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class PmergeMe
 
 		void	displayElements(void) const;
 		void	displayVectorSequence(void) const;
+		size_t	getSequenceSize(void) const;
 
 	private:
 
