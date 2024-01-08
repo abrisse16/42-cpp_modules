@@ -6,11 +6,12 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 00:11:35 by abrisse           #+#    #+#             */
-/*   Updated: 2024/01/02 00:14:39 by abrisse          ###   ########.fr       */
+/*   Updated: 2024/01/08 11:35:11 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <vector>
 
 #include "easyfind.hpp"
 
