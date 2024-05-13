@@ -7,13 +7,6 @@
 Our first introduction to C++ and its object-oriented programming paradigm. This pool is designed to help us understand the specifities of the language when compared to C, and to get used to the syntax and the way of thinking in C++. We will learn about namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff. This is a very important pool, as it will be the basis for the next projects.
 </i>
 
-##
-
-### Final grade
-[![abrisse's 42 cub3d Score](https://badge42.vercel.app/api/v2/cl1rqvecz002109l7rv0oprry/project/3105810)](https://github.com/JaeSeoKim/badge42)
-
-
-
 </div>
 
 ---
@@ -37,7 +30,10 @@ Our first introduction to C++ and its object-oriented programming paradigm. This
 
 <div align=center>
 
-[![abrisse's 42 CPP Module 00 Score](https://badge42.vercel.app/api/v2/cl1rqvecz002109l7rv0oprry/project/2922173)](https://github.com/JaeSeoKim/badge42)
+[![abrisse's 42 CPP Module 00 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/2922173)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp00-subject-v8.en.pdf) / [French subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp00-subject-v8.fr.pdf)
+
 </div>
 
 This first module of C++ is designed to help us understand the specifities of the language when compared to C. We will learn about :
@@ -74,6 +70,14 @@ In this exercise, we are given two files which will help us recreate a class and
 </details>
 
 ## Module 01
+
+<div align=center>
+
+[![abrisse's 42 CPP Module 01 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3281338)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp01-subject-v9_1.en.pdf) / [French subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp01-subject-v9_1.fr.pdf)
+
+</div>
 
 This module is designed to help us understand the memory allocation, references, pointers to members and the usage of the switch in CPP.
 
@@ -121,19 +125,83 @@ Now we have to create a horde of Zombies, using the previous class.
 
 ## Module 02
 
+<div align=center>
+
+[![abrisse's 42 CPP Module 02 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3283877)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp02-subject-v7.en.pdf) / [French subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp02-subject-v7.fr.pdf)
+
+</div>
+
 ## Module 03
+
+<div align=center>
+
+[![abrisse's 42 CPP Module 03 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3284453)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp03-subject-v6.en.pdf) / [French subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp03-subject-v6.fr.pdf)
+
+</div>
 
 ## Module 04
 
+<div align=center>
+
+[![abrisse's 42 CPP Module 04 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3296984)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp04-subject-v10.en.pdf) / [French subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp04-subject-v10.fr.pdf)
+
+</div>
+
 ## Module 05
+
+<div align=center>
+
+[![abrisse's 42 CPP Module 05 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3359455)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp05-subject-v10_1.en.pdf)
+
+</div>
 
 ## Module 06
 
+<div align=center>
+
+[![abrisse's 42 CPP Module 06 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3459632)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp06-subject-v6_2.en.pdf)
+
+</div>
+
 ## Module 07
+
+<div align=center>
+
+[![abrisse's 42 CPP Module 07 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3459955)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp07-subject-v7.en.pdf)
+
+</div>
 
 ## Module 08
 
+<div align=center>
+
+[![abrisse's 42 CPP Module 08 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3460420)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp08-subject-v7.en.pdf) / [French subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp08-subject-v7.fr.pdf)
+
+</div>
+
 ## Module 09
+
+<div align=center>
+
+[![abrisse's 42 CPP Module 09 Score](https://badge.nimon.fr/api/v2/clw51aj8x026501rzp5ef4x2f/project/3488724)](https://github.com/Nimon77/badge42)
+
+[English subject](https://github.com/abrisse16/42-subjects/blob/7385a594afd19b06ab40ed62b5e8c818d2d8bd21/cpp09-subject-v2.en.pdf)
+
+</div>
 
 ## Resources, documentation and references
 
